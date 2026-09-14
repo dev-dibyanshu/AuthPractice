@@ -7,7 +7,7 @@ namespace AuthPractice.Controllers
     [Route("api/[controller]")]
     public class DataController : ControllerBase
     {
-        [Authorize]
+        [Authorize(Roles = "Student")]
         [HttpGet("student")]
         public IActionResult GetStudentData()
         {
