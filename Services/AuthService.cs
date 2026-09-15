@@ -28,7 +28,6 @@ namespace AuthPractice.Services
 
             var user = new User
             {
-                Id = 1,
                 UserName = request.UserName,
                 Password = _passwordHasher.HashPassword(request.Password),
                 Role = "Student"

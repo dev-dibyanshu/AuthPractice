@@ -6,7 +6,7 @@ namespace AuthPractice.Repositories
     {
 
         private readonly List<User> _users = new();
-
+        private int _nextId = 2;
         public UserRepository(IPasswordHasher passwordHasher)
         {
             _users = new List<User>
@@ -28,6 +28,7 @@ namespace AuthPractice.Repositories
         }
         public void Add(User user)
         {
+            user.Id = _nextId++;
             _users.Add(user);
         }
     }
